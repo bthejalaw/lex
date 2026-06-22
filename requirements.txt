@@ -9,5 +9,6 @@ SpeechRecognition
 pydub
 deepface
 tensorflow
+tf-keras
 opencv-python-headless
 Pillow
