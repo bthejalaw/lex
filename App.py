@@ -44,8 +44,10 @@ except ImportError:
 try:
     from deepface import DeepFace
     HAS_DEEPFACE = True
-except ImportError:
+    DEEPFACE_ERROR = None
+except Exception as e:
     HAS_DEEPFACE = False
+    DEEPFACE_ERROR = str(e)
 
 try:
     from PIL import Image
@@ -956,6 +958,11 @@ with st.sidebar:
             + ", ".join(f"<code>{m}</code>" for m in missing)
             + "</div>", unsafe_allow_html=True,
         )
+        if not HAS_DEEPFACE:
+            st.markdown(
+                f'<div class="notice-warn">DeepFace Error: {DEEPFACE_ERROR}</div>',
+                unsafe_allow_html=True
+            )
     else:
         st.markdown('<div class="notice-ok">All packages installed and ready.</div>', unsafe_allow_html=True)
 
