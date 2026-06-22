@@ -1,0 +1,13 @@
+streamlit
+pandas
+numpy
+matplotlib
+scikit-learn
+pymupdf
+python-docx
+SpeechRecognition
+pydub
+deepface
+tensorflow
+opencv-python-headless
+Pillow
